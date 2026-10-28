@@ -33,6 +33,6 @@ Keep signing material, passwords, machine paths and generated APK/AAB files outs
 - [Main project README](../README.md)
 - [Public configuration guide](../docs/CONFIGURATION.md)
 - [Verification and limits](../docs/VERIFICATION.md)
-- [Development approach](../README.md#development-approach)
+- [Development approach](../CONTRIBUTING.md#development-approach)
 
 Private store-account records, launch checklists and operational procedures are intentionally excluded. See the [public security reporting policy](../SECURITY.md) for vulnerability reports.

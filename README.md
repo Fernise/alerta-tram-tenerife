@@ -1,16 +1,12 @@
 <p align="center">
-  <img src="public/icon-512.png" width="112" alt="Alerta Tram Tenerife project logo" />
+  <img src="public/icon-512.png" width="64" alt="Alerta Tram Tenerife project logo" />
 </p>
 
 # Alerta Tram Tenerife
 
-A clearer view of Tenerife’s tram network.
+An independent Tenerife tram companion with live vehicle positions, occupancy, community alerts, a PWA and an Android TWA wrapper.
 
 [![CI](https://github.com/Fernise/alerta-tram-tenerife/actions/workflows/ci.yml/badge.svg)](https://github.com/Fernise/alerta-tram-tenerife/actions/workflows/ci.yml)
-[![License: reserved](https://img.shields.io/badge/license-All_rights_reserved-52646b)](LICENSE)
-[![Built with Codex](https://img.shields.io/badge/Built_with-Codex-5B5BD6)](#development-approach)
-
-An independent Tenerife tram companion with live vehicle positions, occupancy, community alerts, a PWA and an Android TWA wrapper.
 
 **Technology:** React · TypeScript · Vinext/Vite · Cloudflare D1 · Python · Android TWA
 
@@ -83,14 +79,8 @@ The web tests cover freshness, moderation boundaries, backup shape, accessibilit
 - [Contribution guidance](CONTRIBUTING.md)
 - [Third-party notices](THIRD_PARTY_NOTICES.md)
 
-## Development approach
-
-Created and directed by **[Fernando · @Fernise](https://github.com/Fernise)** using agentic programming with **OpenAI Codex**. Product direction, requirements and final decisions are the author’s; coding agents contributed to implementation, refactoring, documentation and testing.
-
-See the [verification record](docs/VERIFICATION.md) for completed checks and known limitations.
-
 ## License
 
-Publicly viewable source; **all rights reserved**. No open-source reuse license is granted. See [LICENSE](LICENSE).
+All rights reserved. See [LICENSE](LICENSE).
 
 Third-party libraries and assets retain their own licenses.
