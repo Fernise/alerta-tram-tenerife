@@ -6,6 +6,12 @@
 
 An independent Tenerife tram companion with live vehicle positions, occupancy, community alerts, a PWA and an Android TWA wrapper.
 
+## Preview
+
+![Tenerife tram route map and vehicle cards](docs/assets/route-desktop.png)
+
+Captured locally on 28 October 2026 using the default public feed. Vehicle counts, positions and arrival times are a snapshot of that session, not current travel information. Source attribution is shown in the interface.
+
 [![CI](https://github.com/Fernise/alerta-tram-tenerife/actions/workflows/ci.yml/badge.svg)](https://github.com/Fernise/alerta-tram-tenerife/actions/workflows/ci.yml)
 
 **Technology:** React · TypeScript · Vinext/Vite · Cloudflare D1 · Python · Android TWA
@@ -21,15 +27,29 @@ For Tenerife residents and visitors who want tram positions and recent community
 - Opt-in notification preferences and install guidance.
 - A server-side realtime relay, backup verification tools and an Android wrapper.
 
+## Screenshots
+
+<details>
+<summary>When live data is unavailable</summary>
+
+![Route map with live data unavailable](docs/assets/route-unavailable.png)
+
+With transport endpoints blocked in this local capture, the app hides positions and arrival times and explains the missing data.
+
+</details>
+
+<details>
+<summary>Mobile view</summary>
+
+<img src="docs/assets/mobile-route.png" width="390" alt="Tenerife tram route map on a mobile screen" />
+
+The same public-feed capture session. Positions and counts are time-dependent.
+
+</details>
+
 ## Project status
 
 An independently developed application with a substantial implementation and automated tests. Live feeds, notification delivery, Android installation and store release depend on external configuration and device testing. This repository is not an official transport-operator service.
-
-## Preview
-
-![Local alerta-tram-tenerife interface](docs/assets/preview.png)
-
-Captured locally with external browser requests blocked. Status labels and artwork illustrate the interface; this image does not establish current transport conditions or provider authorization.
 
 ## Quick start
 
