@@ -1,0 +1,17 @@
+[Unit]
+Description=Alerta Tram verified SQLite backup
+
+[Service]
+Type=oneshot
+User=appuser
+Group=appuser
+Environment=HISTORY_DB=/var/lib/alerta-tram-relay/occupancy.sqlite3
+ExecStart=/usr/bin/python3 /opt/alerta-tram-relay/backup.py
+UMask=0077
+TimeoutStartSec=180
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/lib/alerta-tram-relay
+RestrictAddressFamilies=AF_UNIX

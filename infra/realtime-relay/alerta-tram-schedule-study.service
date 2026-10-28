@@ -1,0 +1,19 @@
+[Unit]
+Description=Alerta Tram private schedule reliability report
+After=network-online.target alerta-tram-relay.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=appuser
+Group=appuser
+WorkingDirectory=/opt/alerta-tram-relay
+ExecStart=/usr/bin/python3 /opt/alerta-tram-relay/schedule_study.py daily --db /var/lib/alerta-tram-relay/occupancy.sqlite3 --state-dir /var/lib/alerta-tram-relay/schedule-study --profiles /opt/alerta-tram-relay/schedule_profiles.json --days 30
+UMask=0077
+TimeoutStartSec=180
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/lib/alerta-tram-relay
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6

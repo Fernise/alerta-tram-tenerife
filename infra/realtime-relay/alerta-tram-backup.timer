@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Alerta Tram backup with seven-day retention
+
+[Timer]
+OnCalendar=*-*-* 04:15:00 UTC
+RandomizedDelaySec=300
+Persistent=true
+
+[Install]
+WantedBy=timers.target

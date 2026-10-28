@@ -1,0 +1,8 @@
+192.0.2.10.sslip.io {
+    reverse_proxy 127.0.0.1:8787
+
+    header {
+        -Server
+        Strict-Transport-Security "max-age=31536000"
+    }
+}

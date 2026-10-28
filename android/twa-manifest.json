@@ -1,0 +1,42 @@
+{
+  "packageId": "com.alertatram.tenerife",
+  "host": "alerta-tram-tenerife.docentesec.chatgpt.site",
+  "name": "Alerta Tram Tenerife",
+  "launcherName": "Alerta Tram",
+  "display": "standalone",
+  "displayOverride": ["standalone"],
+  "themeColor": "#164d49",
+  "themeColorDark": "#0f302e",
+  "navigationColor": "#f3eedf",
+  "navigationColorDark": "#0f302e",
+  "navigationDividerColor": "#164d49",
+  "navigationDividerColorDark": "#f3eedf",
+  "backgroundColor": "#f3eedf",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://alerta-tram-tenerife.docentesec.chatgpt.site/icon-android-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "alerta-tram"
+  },
+  "appVersionCode": 1,
+  "appVersion": "1.0.0",
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://alerta-tram-tenerife.docentesec.chatgpt.site/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://alerta-tram-tenerife.docentesec.chatgpt.site/",
+  "minSdkVersion": 24,
+  "orientation": "default",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": []
+}

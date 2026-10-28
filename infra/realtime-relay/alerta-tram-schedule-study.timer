@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily private Alerta Tram schedule reliability report
+
+[Timer]
+OnCalendar=*-*-* 03:35:00 UTC
+RandomizedDelaySec=300
+Persistent=true
+
+[Install]
+WantedBy=timers.target

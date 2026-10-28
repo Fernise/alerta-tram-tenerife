@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.alertatram.tenerife",
+      "sha256_cert_fingerprints": [
+        "0A:E2:FD:E9:D4:7F:B9:13:74:0E:34:18:8A:DD:41:D2:AF:47:5F:60:B0:2B:F3:6F:33:4C:26:43:61:23:A9:A5"
+      ]
+    }
+  }
+]

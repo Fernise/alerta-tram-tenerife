@@ -1,0 +1,26 @@
+[Unit]
+Description=Alerta Tram realtime relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=appuser
+Group=appuser
+WorkingDirectory=/opt/alerta-tram-relay
+EnvironmentFile=/opt/alerta-tram-relay/relay.env
+Environment=HISTORY_DB=/var/lib/alerta-tram-relay/occupancy.sqlite3
+Environment=HISTORY_ENABLED=1
+StateDirectory=alerta-tram-relay
+ExecStart=/usr/bin/python3 /opt/alerta-tram-relay/server.py
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

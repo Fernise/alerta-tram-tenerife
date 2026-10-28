@@ -1,0 +1,194 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "id": "f8453d14-cde7-4f80-99ca-b71020b33504",
+  "prevId": "1ea7a86a-68fb-47f2-9195-05382b0a2d7b",
+  "tables": {
+    "community_reports": {
+      "name": "community_reports",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "line": {
+          "name": "line",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "direction": {
+          "name": "direction",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "stop": {
+          "name": "stop",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "zone": {
+          "name": "zone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "last_confirmed_at": {
+          "name": "last_confirmed_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "confirmations": {
+          "name": "confirmations",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": 1
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'active'"
+        },
+        "reporter_hash": {
+          "name": "reporter_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "removed_at": {
+          "name": "removed_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "removed_by_hash": {
+          "name": "removed_by_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "idx_community_reports_active": {
+          "name": "idx_community_reports_active",
+          "columns": [
+            "line",
+            "direction",
+            "status",
+            "last_confirmed_at"
+          ],
+          "isUnique": false
+        },
+        "idx_community_reports_reporter_created": {
+          "name": "idx_community_reports_reporter_created",
+          "columns": [
+            "reporter_hash",
+            "created_at"
+          ],
+          "isUnique": false
+        },
+        "idx_community_reports_remover_removed": {
+          "name": "idx_community_reports_remover_removed",
+          "columns": [
+            "removed_by_hash",
+            "removed_at"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "report_confirmations": {
+      "name": "report_confirmations",
+      "columns": {
+        "report_id": {
+          "name": "report_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "device_hash": {
+          "name": "device_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "confirmed_at": {
+          "name": "confirmed_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "report_confirmations_report_id_community_reports_id_fk": {
+          "name": "report_confirmations_report_id_community_reports_id_fk",
+          "tableFrom": "report_confirmations",
+          "tableTo": "community_reports",
+          "columnsFrom": [
+            "report_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "report_confirmations_report_id_device_hash_pk": {
+          "columns": [
+            "report_id",
+            "device_hash"
+          ],
+          "name": "report_confirmations_report_id_device_hash_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {},
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "indexes": {}
+  }
+}
